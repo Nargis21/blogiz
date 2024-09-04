@@ -1,4 +1,5 @@
 import BlogCard from '@/components/ui/BlogCard';
+import { TBlog } from '@/types';
 import React from 'react';
 
 const BlogsPage = async () => {
@@ -12,7 +13,7 @@ const BlogsPage = async () => {
             <p className='text-gray-400 text-center italic w-2/4 mx-auto mt-2'>Dive into the fascinating world of quantum computing, where unlocking unprecedented computational power.</p>
             <div className='grid grid-cols-3 my-10 gap-5'>
                 {
-                    blogs.map(blog => <BlogCard key={blog.id} blog={blog} />)
+                    blogs.map((blog: TBlog) => <BlogCard key={blog.id} blog={blog} />)
                 }
             </div>
 
