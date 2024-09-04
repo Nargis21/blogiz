@@ -1,12 +1,15 @@
+"use client"
 import BlogCard from '@/components/ui/BlogCard';
+import { useGetBlogsQuery } from '@/redux/api/baseAPi';
 import { TBlog } from '@/types';
 import React from 'react';
 
-const BlogsPage = async () => {
-    const res = await fetch('http://localhost:5000/blogs', {
-        cache: "no-store"
-    })
-    const blogs = await res.json()
+const BlogsPage = () => {
+    // const res = await fetch('http://localhost:5000/blogs', {
+    //     cache: "no-store"
+    // })
+    //    const blogs = await res.json()
+    const { data: blogs } = useGetBlogsQuery(undefined)
     return (
         <div className='my-10 w-[90%] mx-auto'>
             <h1 className='text-4xl text-center'>All Blogs from<span className='text-accent'>Blogiz</span></h1>
