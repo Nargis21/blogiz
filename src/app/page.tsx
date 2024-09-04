@@ -1,4 +1,5 @@
 import LatestBlogs from "@/components/latestBlogs/LatestBlogs";
+import Banner from "@/components/banner/Banner";
 
 const HomePage = async () => {
 
@@ -10,6 +11,7 @@ const HomePage = async () => {
   const blogs = await res.json()
   return (
     <>
+      <Banner />
       <LatestBlogs blogs={blogs} />
     </>
   );
